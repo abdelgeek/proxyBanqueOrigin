@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.objis</groupId>
+        <artifactId>ProxyBanqueV2</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>com.objis.proxyBanqueV2</groupId>
+    <artifactId>proxyBanqueV2Dao</artifactId>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.objis.proxyBanqueV2</groupId>
+            <artifactId>proxyBanqueV2Domaine</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.objis.ProxyBanqueV2</groupId>
+            <artifactId>proxyBanqueV2Domaine</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>

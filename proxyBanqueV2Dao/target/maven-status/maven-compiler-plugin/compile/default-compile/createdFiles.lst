@@ -1,0 +1,8 @@
+com\objis\proxybanquev2\proxybanquev2dao\inter\IClientDao.class
+com\objis\proxybanquev2\proxybanquev2dao\inter\IConseillerDao.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\ClientDaoImpl.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\CompteDaoImpl.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\ConnexionImpl.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\lanceur\Lanceur.class
+com\objis\proxybanquev2\proxybanquev2dao\inter\ICompteDao.class
+com\objis\proxybanquev2\proxybanquev2dao\inter\IDao.class

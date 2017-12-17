@@ -1,0 +1,4 @@
+com\objis\proxybanquev2\proxybanquev2web\model\CompteModel.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\listeClient.class
+com\objis\proxybanquev2\proxybanquev2web\model\ClientModel.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\listeComptes.class
