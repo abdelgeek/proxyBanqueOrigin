@@ -30,7 +30,7 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="listeClients.jsp">
             
-            <span class="nav-link-text">Home</span>
+            <span class="nav-link-text">Liste Clients</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">

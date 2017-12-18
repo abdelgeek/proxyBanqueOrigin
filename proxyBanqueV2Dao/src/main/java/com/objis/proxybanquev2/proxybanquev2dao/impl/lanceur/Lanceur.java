@@ -23,8 +23,7 @@ public class Lanceur {
     
     
     public static void main(String[] args){
-        ConnexionImpl.getConnexion();
-        
+               
          ICompteDao dao = new CompteDaoImpl() ;
          LinkedList<Compte> comptes = new LinkedList<>();
          

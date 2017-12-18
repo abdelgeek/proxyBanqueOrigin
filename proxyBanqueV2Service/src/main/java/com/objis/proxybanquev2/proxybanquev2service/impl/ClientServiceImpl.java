@@ -30,6 +30,15 @@ public class ClientServiceImpl implements IClientService{
     public LinkedList<Client> FindClientByConseiller(Long conseillerId) {
          return dao.FindClientByConseiller(conseillerId);    }
 
+    @Override
+    public Client findOne(Long idClient) {
+       return dao.findOne(idClient);    }
+
+    @Override
+    public Boolean Update(Client t) {
+        return dao.Update(t);
+    }
+
   
     
     

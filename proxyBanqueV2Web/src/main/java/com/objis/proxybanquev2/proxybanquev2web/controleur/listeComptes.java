@@ -8,6 +8,7 @@ package com.objis.proxybanquev2.proxybanquev2web.controleur;
 import com.objis.proxybanquev2.proxybanquev2domaine.Compte;
 import com.objis.proxybanquev2.proxybanquev2service.impl.CompteServiceImpl;
 import com.objis.proxybanquev2.proxybanquev2service.inter.ICompteService;
+import com.objis.proxybanquev2.proxybanquev2web.utils.CheckType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
@@ -65,14 +66,16 @@ public class listeComptes extends HttpServlet {
             throws ServletException, IOException {
         
        Long idClient;
-        idClient =Long.parseLong( request.getParameter("idClient"));
-        LinkedList<Compte> comptes = new LinkedList<>();
+        
+        
+        if (CheckType.isLong(request.getParameter("idClient"))){
+            idClient =Long.parseLong(request.getParameter("idClient"));
+             LinkedList<Compte> comptes = new LinkedList<>();
         comptes = service.FindCompteByClient(idClient);
-        for(Compte c : comptes){
-            System.out.println(c.getNumeroCompte());
-        }
         request.setAttribute("comptes", comptes);
         request.getRequestDispatcher("listeComptes.jsp").forward(request, response);
+        }
+       
         
     }
 

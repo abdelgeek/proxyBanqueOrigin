@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,20 +20,22 @@ import java.util.LinkedList;
  */
 public class ClientDaoImpl implements IClientDao {
 
-    private String listSql = "Select *  from client where idConseiller=? ";;
-    
+    private String listSql = "Select *  from client where idConseiller=? ";
+    private String findOneSql = "Select *  from client where idClient=? ";
+    private String updateSql = "Update client set nom=?,prenom=?,email=?,adresse=? where idClient=? ";
+
     /**
      * Retourner la liste des clients d'un conseiller
+     *
      * @param idConseiller
      * @return Collection Client pour un conseiller donné
      */
     @Override
     public LinkedList<Client> FindClientByConseiller(Long idConseiller) {
         LinkedList<Client> clients = new LinkedList<>();
-      
 
         try {
-            PreparedStatement ps = ConnexionImpl.getConnexion().prepareStatement(listSql);
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listSql);
             ps.setLong(1, idConseiller);
             ResultSet rs = ps.executeQuery();
 
@@ -43,14 +47,58 @@ public class ClientDaoImpl implements IClientDao {
                 client.setEmail(rs.getString("email"));
                 client.setAdresse(rs.getString("adresse"));
                 client.setIdConseiller(rs.getLong("idConseiller"));
-             
+
                 clients.add(client);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return clients;
     }
 
+    @Override
+    public Client findOne(Long idClient) {
+        Client client = new Client();
+        try {
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(findOneSql);
+            ps.setLong(1, idClient);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                client.setIdClient(rs.getLong("idClient"));
+                client.setNom(rs.getString("nom"));
+                client.setPrenom(rs.getString("prenom"));
+                client.setEmail(rs.getString("email"));
+                client.setAdresse(rs.getString("adresse"));
+                client.setIdConseiller(rs.getLong("idConseiller"));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return client;
+    }
+
+    @Override
+    public Boolean Update(Client client) {
+
+        boolean result = false;
+        try {
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(updateSql);
+            ps.setString(1, client.getNom());
+            ps.setString(2, client.getPrenom());
+            ps.setString(3, client.getEmail());
+            ps.setString(4, client.getAdresse());
+            ps.setLong(5, client.getIdClient());
+            ps.executeUpdate();
+            result =true;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+return result;
+    }
 }

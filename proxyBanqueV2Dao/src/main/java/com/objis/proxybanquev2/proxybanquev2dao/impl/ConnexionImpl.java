@@ -6,6 +6,7 @@
 package com.objis.proxybanquev2.proxybanquev2dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import org.apache.commons.dbcp.BasicDataSource;
 
@@ -27,7 +28,7 @@ public class ConnexionImpl {
      * Creer la connexion avec la base de donnée
      * @return un objet Connection
      */
-    public static Connection getConnexion() {
+    private static Connection getConnexion() {
 
         if (conn == null) {
             try {
@@ -48,5 +49,11 @@ public class ConnexionImpl {
             }
         }
         return conn;
+    }
+    
+    
+    public static PreparedStatement CreatePrepareStatement(String sql) throws SQLException{
+        PreparedStatement ps = getConnexion().prepareStatement(sql);
+        return ps;
     }
 }

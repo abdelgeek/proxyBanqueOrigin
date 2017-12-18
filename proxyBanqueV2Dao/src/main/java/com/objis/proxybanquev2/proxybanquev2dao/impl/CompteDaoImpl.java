@@ -34,7 +34,7 @@ public class CompteDaoImpl implements ICompteDao {
         LinkedList<Compte> comptes = new LinkedList<>();
 
         try {
-            PreparedStatement ps = ConnexionImpl.getConnexion().prepareStatement(listSql);
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listSql);
             ps.setLong(1, clientId);
             ResultSet rs = ps.executeQuery();
 
@@ -57,6 +57,41 @@ public class CompteDaoImpl implements ICompteDao {
         }
 
         return comptes;
+    }
+
+    @Override
+    public Compte findOne(String numeroCompte) {
+         Compte compte = new Compte();
+
+        try {
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listSql);
+            ps.setString(1, numeroCompte);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+               
+                compte.setIdCompte(rs.getLong("idCompte"));
+                compte.setDateOuverture(rs.getDate("dateOuverture"));
+                compte.setSolde(rs.getDouble("solde"));
+                compte.setTypeCompte(rs.getString("typeCompte"));
+                compte.setIdClient(rs.getLong("idClient"));
+                compte.setNumeroCompte(rs.getString("numeroCompte"));
+                compte.setDecouvert(rs.getFloat("decouvert"));
+                compte.setTaux(rs.getFloat("taux"));
+
+               
+            }
+
+        } catch (SQLException ex) {
+
+        }
+
+        return compte;
+    }
+
+    @Override
+    public Boolean Update(Compte t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -12,6 +12,7 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Accueil</a>
             </li>
+            <li class="breadcrumb-item active">Liste des Clients</li>
             <li class="breadcrumb-item active">Liste des Comptes</li>
         </ol>
         <div class="row">

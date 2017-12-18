@@ -11,5 +11,7 @@ package com.objis.proxybanquev2.proxybanquev2dao.inter;
  */
 public interface IDao<T,Pk>{
     
+   public T findOne(Pk pk);
    
+   public Boolean Update(T t);
 }

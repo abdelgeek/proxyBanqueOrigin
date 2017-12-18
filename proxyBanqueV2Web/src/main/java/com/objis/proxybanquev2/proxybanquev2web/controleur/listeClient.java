@@ -5,9 +5,14 @@
  */
 package com.objis.proxybanquev2.proxybanquev2web.controleur;
 
+import com.objis.proxybanquev2.proxybanquev2domaine.Client;
+import com.objis.proxybanquev2.proxybanquev2service.impl.ClientServiceImpl;
+import com.objis.proxybanquev2.proxybanquev2service.inter.IClientService;
 import com.objis.proxybanquev2.proxybanquev2service.inter.IService;
+import com.objis.proxybanquev2.proxybanquev2web.utils.CheckType;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +26,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "listeClient", urlPatterns = {"/listeClients"})
 public class listeClient extends HttpServlet {
 
-   private IService service;
+    private IClientService service = new ClientServiceImpl();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,7 +45,7 @@ public class listeClient extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet listeClient</title>");            
+            out.println("<title>Servlet listeClient</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet listeClient at " + request.getContextPath() + "</h1>");
@@ -60,9 +66,17 @@ public class listeClient extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-       request.getRequestDispatcher("listeClients.jsp").forward(request, response);
+
+        if (CheckType.isLong(request.getParameter("idConseiller"))) {
+            Long idConseiller = Long.parseLong(request.getParameter("idConseiller")); // convert parameter
+            LinkedList<Client> clients = new LinkedList<>();
+            clients = service.FindClientByConseiller(idConseiller); // get client list
+
+            request.setAttribute("clients", clients); //send result to ui
+            request.getRequestDispatcher("listeClients.jsp").forward(request, response);
+
+        }
+
     }
 
     /**

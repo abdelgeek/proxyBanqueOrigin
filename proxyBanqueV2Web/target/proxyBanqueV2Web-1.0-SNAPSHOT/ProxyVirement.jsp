@@ -1,7 +1,7 @@
 
 
 
-   <?php include"ProxyHeader.php" ?>
+   <%@include file="header.jsp" %>
             <!-- ******************************************************************-->
             <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ debut de le content @@@@@@@@@@@@@@@@@-->
             <!-- ******************************************************************-->
@@ -30,13 +30,13 @@
 
         	<div class="form-group">
             <label for="exampleInputPassword1">Compte a débiter</label>
-            <select class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+           <!-- <select class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
             	<option value="" disabled selected>Choose your country</option>
     			<option value="1">USA</option>
     			<option value="2">Germany</option>
    				<option value="3">France</option>
    				<option value="4">Poland</option>
-    			<option value="5">Japan</option>
+    			<option value="5">Japan</option>-->
           </div>
 
           <div class="form-group">

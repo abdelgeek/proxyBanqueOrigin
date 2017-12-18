@@ -12,7 +12,7 @@ import java.util.LinkedList;
  *
  * @author Abdel veno vedi vici
  */
-public interface ICompteDao extends IDao<Compte, Long> {
+public interface ICompteDao extends IDao<Compte, String> {
     
     /**
      * 

@@ -12,7 +12,7 @@ import java.util.LinkedList;
  *
  * @author Abdel veno vedi vici
  */
-public interface ICompteService  extends IService<Compte, Long>{
+public interface ICompteService  extends IService<Compte, String>{
     /**
      * 
      * @param clientId

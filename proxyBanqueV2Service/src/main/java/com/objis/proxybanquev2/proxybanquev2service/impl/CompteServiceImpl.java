@@ -23,5 +23,15 @@ public class CompteServiceImpl implements ICompteService{
     public LinkedList<Compte> FindCompteByClient(Long clientId) {
        return dao.FindCompteByClient(clientId);
     }
+
+    
+    @Override
+    public Compte findOne(String pk) {
+      return dao.findOne(pk);   }
+
+    @Override
+    public Boolean Update(Compte t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
