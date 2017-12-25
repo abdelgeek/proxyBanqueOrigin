@@ -5,7 +5,7 @@
  */
 package com.objis.proxybanquev2.proxybanquev2domaine;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -13,11 +13,10 @@ import java.util.Date;
  */
 public class Virement {
     private Long idVirement;
-    private String numeroVirement;
     private Date dateVirement;
-    private Double montant;
-    private Compte idCompteDebiteur;
-    private Compte idCompteCrediteur;
+    private Integer montant;
+    private Long idCompteDebiteur;
+    private Long idCompteCrediteur;
     private Long idConseiller;
 
     public Long getIdVirement() {
@@ -28,14 +27,6 @@ public class Virement {
         this.idVirement = idVirement;
     }
 
-    public String getNumeroVirement() {
-        return numeroVirement;
-    }
-
-    public void setNumeroVirement(String numeroVirement) {
-        this.numeroVirement = numeroVirement;
-    }
-
     public Date getDateVirement() {
         return dateVirement;
     }
@@ -44,36 +35,36 @@ public class Virement {
         this.dateVirement = dateVirement;
     }
 
-    public Double getMontant() {
+    public Integer getMontant() {
         return montant;
     }
 
-    public void setMontant(Double montant) {
+    public void setMontant(Integer montant) {
         this.montant = montant;
     }
 
-    public Compte getIdCompteDebiteur() {
+    public Long getIdCompteDebiteur() {
         return idCompteDebiteur;
     }
 
-    public void setIdCompteDebiteur(Compte idCompteDebiteur) {
+    public void setIdCompteDebiteur(Long idCompteDebiteur) {
         this.idCompteDebiteur = idCompteDebiteur;
     }
 
-    public Compte getIdCompteCrediteur() {
+    public Long getIdCompteCrediteur() {
         return idCompteCrediteur;
     }
 
-    public void setIdCompteCrediteur(Compte idCompteCrediteur) {
+    public void setIdCompteCrediteur(Long idCompteCrediteur) {
         this.idCompteCrediteur = idCompteCrediteur;
     }
 
-    public Long getConseiller() {
+    public Long getIdConseiller() {
         return idConseiller;
     }
 
-    public void setConseiller(Long conseiller) {
-        this.idConseiller = conseiller;
+    public void setIdConseiller(Long idConseiller) {
+        this.idConseiller = idConseiller;
     }
 
     public Virement() {

@@ -119,5 +119,6 @@
       <module>proxyBanqueV2Dao</module>
       <module>proxyBanqueV2Service</module>
     <module>proxyBanqueV2Web</module>
+      <module>proxyBanqueV2Dto</module>
    </modules>
 </project>

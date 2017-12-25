@@ -1,6 +1,8 @@
 com\objis\proxybanquev2\proxybanquev2web\model\CompteModel.class
-com\objis\proxybanquev2\proxybanquev2web\controleur\listeClient.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\faireVirement.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\ModifierClient.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\ListeComptes.class
 com\objis\proxybanquev2\proxybanquev2web\model\ClientModel.class
-com\objis\proxybanquev2\proxybanquev2web\controleur\modifierClient.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\ListNumCompte.class
 com\objis\proxybanquev2\proxybanquev2web\utils\CheckType.class
-com\objis\proxybanquev2\proxybanquev2web\controleur\listeComptes.class
+com\objis\proxybanquev2\proxybanquev2web\controleur\ListeClient.class

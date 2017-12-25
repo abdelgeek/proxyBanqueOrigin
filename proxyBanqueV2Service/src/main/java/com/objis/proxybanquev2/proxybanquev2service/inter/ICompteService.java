@@ -14,9 +14,20 @@ import java.util.LinkedList;
  */
 public interface ICompteService  extends IService<Compte, String>{
     /**
-     * 
+     * Interface permettant de retrouver un compte grace
      * @param clientId
      * @return  LinkedList Compte
      */
     public LinkedList<Compte> FindCompteByClient(Long clientId );
+    
+   
+    
+    /**
+     * 
+     * @param numCompte
+     * @return 
+     */
+    public LinkedList<String> FindNumCompte(String numCompte );
+    
+    
 }

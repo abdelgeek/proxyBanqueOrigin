@@ -9,15 +9,16 @@
   <meta name="author" content="">
   <title>Proxy Banque</title>
   <!-- Bootstrap core CSS-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+ <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <!-- Custom styles for this template-->
-  <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/jqueryCss.css" rel="stylesheet" type="text/css"/>
+ <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
   <link href="assets/css/sb-admin.css" rel="stylesheet">
   <link href="assets/css/customStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body class="fixed-nav sticky-footer bg-danger" id="page-top">
+<body class="fixed-nav  bg-danger" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Proxy Banque V2</a>
@@ -34,7 +35,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="ProxyVirement.php">
+          <a class="nav-link" href="virement.jsp">
             
             <span class="nav-link-text">Virement</span>
           </a>
@@ -60,7 +61,7 @@
         -->
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Déconnexion</a>
+         Deconnexion</a>
         </li>
       </ul>
     </div>

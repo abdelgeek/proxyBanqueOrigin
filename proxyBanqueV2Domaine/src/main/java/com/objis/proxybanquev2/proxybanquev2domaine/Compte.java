@@ -18,7 +18,7 @@ public class Compte {
     private Long idCompte;
     private String NumeroCompte;
     private Date dateOuverture;
-    private Double solde;
+    private Integer solde;
     private String typeCompte;
     private float decouvert;
     private Float taux;
@@ -50,11 +50,11 @@ public class Compte {
         this.dateOuverture = dateOuverture;
     }
 
-    public Double getSolde() {
+    public Integer getSolde() {
         return solde;
     }
 
-    public void setSolde(Double solde) {
+    public void setSolde(Integer solde) {
         this.solde = solde;
     }
 
@@ -91,7 +91,7 @@ public class Compte {
     }
     
 
-    public Compte(Long idCompte, String NumeroCompte, Date dateOuverture, Double solde, String typeCompte, Long idClient) {
+    public Compte(Long idCompte, String NumeroCompte, Date dateOuverture, Integer solde, String typeCompte, Long idClient) {
         this.idCompte = idCompte;
         this.dateOuverture = dateOuverture;
         this.solde = solde;

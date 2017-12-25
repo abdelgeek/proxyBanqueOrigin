@@ -35,8 +35,8 @@ public class ClientServiceImpl implements IClientService{
        return dao.findOne(idClient);    }
 
     @Override
-    public Boolean Update(Client t) {
-        return dao.Update(t);
+    public Boolean update(Client t) {
+        return dao.update(t);
     }
 
   

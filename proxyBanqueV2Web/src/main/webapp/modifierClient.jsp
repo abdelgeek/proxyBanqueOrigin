@@ -24,7 +24,7 @@
             <!-- ******************************************************************-->
 
            <div class="container">
-    <div class="card card-login mx-auto mt-5">
+    <div class="card card-login mx-auto mb-5 mt-5">
       <h5 class="card-header">Modifier Client</h5>
       <div class="card-body">
           <form method="post" action="modifierClient">
@@ -32,7 +32,7 @@
               
                <div class="form-group row">
             <label for="id" class="col-md-4">id</label>
-            <input id="id" name="id" value="<c:out value="${client.id}"/>" class="col-md-8 form-control"/>
+            <input id="id" name="id" value="<c:out value="${client.idClient}"/>" class="col-md-8 form-control"/>
          </div>
         <div class="form-group row">
             <label for="nom" class="col-md-4">Nom</label>
@@ -74,4 +74,5 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-      
+  </div>
+              <%@include  file="footer.jsp" %>

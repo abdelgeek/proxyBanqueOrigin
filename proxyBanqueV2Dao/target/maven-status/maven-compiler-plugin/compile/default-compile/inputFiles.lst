@@ -1,8 +1,10 @@
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\impl\CompteDaoImpl.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\impl\ConnexionImpl.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\inter\IDao.java
+C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\impl\VirementDaoImpl.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\inter\IClientDao.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\impl\ClientDaoImpl.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\inter\IConseillerDao.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\impl\lanceur\Lanceur.java
 C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\inter\ICompteDao.java
+C:\Users\Cissé\Documents\NetBeansProjects\ProxyBanqueV2\proxyBanqueV2Dao\src\main\java\com\objis\proxybanquev2\proxybanquev2dao\inter\IVirementDao.java

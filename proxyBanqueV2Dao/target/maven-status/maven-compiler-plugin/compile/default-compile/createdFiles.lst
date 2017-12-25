@@ -6,3 +6,5 @@ com\objis\proxybanquev2\proxybanquev2dao\impl\ConnexionImpl.class
 com\objis\proxybanquev2\proxybanquev2dao\impl\lanceur\Lanceur.class
 com\objis\proxybanquev2\proxybanquev2dao\inter\ICompteDao.class
 com\objis\proxybanquev2\proxybanquev2dao\inter\IDao.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\VirementDaoImpl.class
+com\objis\proxybanquev2\proxybanquev2dao\inter\IVirementDao.class

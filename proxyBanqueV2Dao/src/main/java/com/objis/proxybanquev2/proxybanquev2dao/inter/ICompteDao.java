@@ -20,4 +20,6 @@ public interface ICompteDao extends IDao<Compte, String> {
      * @return LinkedList Compte
      */
        public LinkedList<Compte> FindCompteByClient(Long clientId );
+       
+       public LinkedList<String> FindNumCompte(String numCompte );
 }

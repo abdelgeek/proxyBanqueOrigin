@@ -37,7 +37,7 @@
                                         <th>Type Compte</th>
                                         <th>Decouvert</th>
                                         <th>Taux</th>
-                                        <th>Action</th>
+                                       
                                     </tr>
                                 </thead>
 
@@ -52,8 +52,7 @@
                                             <td>${c.typeCompte}</td>
                                             <td>${c.decouvert}</td>
                                             <td>${c.taux}</td>
-                                            <td><a href='modifierCompte?numeroCompte=${c.numeroCompte}'  class="btn btn-primary">Modifier</a></td>
-                                        </tr>
+                                           </tr>
                                     </c:forEach>
 
 

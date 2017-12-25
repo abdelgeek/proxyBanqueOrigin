@@ -1,5 +1,8 @@
 com\objis\proxybanquev2\proxybanquev2service\inter\ICompteService.class
-com\objis\proxybanquev2\proxybanquev2service\impl\ClientServiceImpl.class
 com\objis\proxybanquev2\proxybanquev2service\inter\IClientService.class
 com\objis\proxybanquev2\proxybanquev2service\inter\IService.class
+com\objis\proxybanquev2\proxybanquev2service\impl\VirementServiceImpl.class
+com\objis\proxybanquev2\proxybanquev2service\impl\ClientServiceImpl.class
 com\objis\proxybanquev2\proxybanquev2service\impl\CompteServiceImpl.class
+com\objis\proxybanquev2\proxybanquev2service\lanceur\Lanceur.class
+com\objis\proxybanquev2\proxybanquev2service\inter\IVirementService.class

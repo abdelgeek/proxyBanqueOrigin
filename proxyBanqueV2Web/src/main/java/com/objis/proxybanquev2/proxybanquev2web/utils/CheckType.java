@@ -13,13 +13,26 @@ public class CheckType {
     
     
     public static Boolean isLong(String s ){
-        boolean isLong =false;
+     
         try{
             Long.parseLong(s);
-            isLong = true;
+            return true;
         }catch(NumberFormatException e){
             e.printStackTrace();
+             return false;
         }
-        return isLong;
+  
+    }
+    
+    public static Boolean isInt(String s ){
+       
+        try{
+            Integer.parseInt(s);
+            return true;
+        }catch(NumberFormatException e){
+        //    e.printStackTrace();
+            return false;
+        }
+        
     }
 }

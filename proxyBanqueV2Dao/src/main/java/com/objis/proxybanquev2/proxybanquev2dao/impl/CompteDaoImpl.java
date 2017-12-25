@@ -22,6 +22,9 @@ import java.util.logging.Logger;
 public class CompteDaoImpl implements ICompteDao {
 
     private String listSql = "Select *  from compte where idClient=? ";
+     private String findOneSql = "Select *  from compte where numeroCompte=? ";
+    private String updateSql = "update compte set solde =? where numeroCompte=? ";
+    private String listNum = "select * from compte where numeroCompte like ? limit 5";
 
     /**
      * Retourner la liste des compte d'un client
@@ -42,7 +45,7 @@ public class CompteDaoImpl implements ICompteDao {
                 Compte compte = new Compte();
                 compte.setIdCompte(rs.getLong("idCompte"));
                 compte.setDateOuverture(rs.getDate("dateOuverture"));
-                compte.setSolde(rs.getDouble("solde"));
+                compte.setSolde(rs.getInt("solde"));
                 compte.setTypeCompte(rs.getString("typeCompte"));
                 compte.setIdClient(rs.getLong("idClient"));
                 compte.setNumeroCompte(rs.getString("numeroCompte"));
@@ -61,37 +64,69 @@ public class CompteDaoImpl implements ICompteDao {
 
     @Override
     public Compte findOne(String numeroCompte) {
-         Compte compte = new Compte();
+        Compte compte = new Compte();
 
         try {
-            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listSql);
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(findOneSql);
             ps.setString(1, numeroCompte);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-               
+
                 compte.setIdCompte(rs.getLong("idCompte"));
                 compte.setDateOuverture(rs.getDate("dateOuverture"));
-                compte.setSolde(rs.getDouble("solde"));
+                compte.setSolde(rs.getInt("solde"));
                 compte.setTypeCompte(rs.getString("typeCompte"));
                 compte.setIdClient(rs.getLong("idClient"));
                 compte.setNumeroCompte(rs.getString("numeroCompte"));
                 compte.setDecouvert(rs.getFloat("decouvert"));
                 compte.setTaux(rs.getFloat("taux"));
 
-               
             }
 
         } catch (SQLException ex) {
-
+            ex.printStackTrace();
         }
 
         return compte;
     }
 
     @Override
-    public Boolean Update(Compte t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean update(Compte compte) {
+        int executeUpdate = 0;
+        try {
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(updateSql);
+            ps.setDouble(1, compte.getSolde());
+            ps.setString(2, compte.getNumeroCompte());
+
+            executeUpdate = ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return executeUpdate > 0;
+    }
+
+    @Override
+    public LinkedList<String> FindNumCompte(String n) {
+        LinkedList<String> numComptes = new LinkedList<>();
+
+        try {
+            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listNum);
+            ps.setString(1, n + "%");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                numComptes.add(rs.getString("numeroCompte"));
+
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return numComptes;
     }
 
 }

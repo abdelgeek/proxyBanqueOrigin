@@ -13,5 +13,5 @@ public interface IDao<T,Pk>{
     
    public T findOne(Pk pk);
    
-   public Boolean Update(T t);
+   public Boolean update(T t);
 }

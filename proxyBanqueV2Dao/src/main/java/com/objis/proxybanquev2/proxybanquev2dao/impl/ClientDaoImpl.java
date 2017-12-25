@@ -61,9 +61,9 @@ public class ClientDaoImpl implements IClientDao {
     public Client findOne(Long idClient) {
         Client client = new Client();
         try {
-            PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(findOneSql);
-            ps.setLong(1, idClient);
-            ResultSet rs = ps.executeQuery();
+            PreparedStatement fps = ConnexionImpl.CreatePrepareStatement(findOneSql);
+            fps.setLong(1, idClient);
+            ResultSet rs = fps.executeQuery();
 
             if (rs.next()) {
 
@@ -83,9 +83,9 @@ public class ClientDaoImpl implements IClientDao {
     }
 
     @Override
-    public Boolean Update(Client client) {
+    public Boolean update(Client client) {
 
-        boolean result = false;
+        int executeUpdate=0;
         try {
             PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(updateSql);
             ps.setString(1, client.getNom());
@@ -94,11 +94,11 @@ public class ClientDaoImpl implements IClientDao {
             ps.setString(4, client.getAdresse());
             ps.setLong(5, client.getIdClient());
             ps.executeUpdate();
-            result =true;
+          executeUpdate =ps.executeUpdate();
 
         } catch (SQLException ex) {
             Logger.getLogger(ClientDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-return result;
+return executeUpdate>0;
     }
 }
