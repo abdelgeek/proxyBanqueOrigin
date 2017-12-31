@@ -44,7 +44,7 @@
                  <td>${c.email}</td>
                  <td>${c.adresse}</td>
                  <td><a href='listeComptes?idClient=${c.idClient}' class ="btn btn-primary">Comptes</a></td>
-                   <td><a href='modifierClient?idClient=${c.idClient}' class ="btn btn-primary">Editer Clients</a></td>
+                   <td><a href='modifierClient?id=${c.idClient}' class ="btn btn-primary">Editer Clients</a></td>
                 </tr>
                   </c:forEach>
              

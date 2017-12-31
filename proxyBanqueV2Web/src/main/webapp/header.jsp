@@ -21,7 +21,7 @@
 <body class="fixed-nav  bg-danger" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Proxy Banque V2</a>
+    <a class="navbar-brand" href="listeClients">Proxy Banque V2</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,13 +29,13 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="listeClients.jsp">
+          <a class="nav-link" href="listeClients">
             
             <span class="nav-link-text">Liste Clients</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="virement.jsp">
+          <a class="nav-link" href="faireVirement">
             
             <span class="nav-link-text">Virement</span>
           </a>
@@ -60,7 +60,7 @@
         </li>
         -->
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+          <a class="nav-link" href="logout">
          Deconnexion</a>
         </li>
       </ul>

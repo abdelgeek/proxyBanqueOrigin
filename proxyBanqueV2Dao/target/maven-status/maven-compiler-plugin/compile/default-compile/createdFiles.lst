@@ -1,4 +1,5 @@
 com\objis\proxybanquev2\proxybanquev2dao\inter\IClientDao.class
+com\objis\proxybanquev2\proxybanquev2dao\impl\ConseillerDaoImpl.class
 com\objis\proxybanquev2\proxybanquev2dao\inter\IConseillerDao.class
 com\objis\proxybanquev2\proxybanquev2dao\impl\ClientDaoImpl.class
 com\objis\proxybanquev2\proxybanquev2dao\impl\CompteDaoImpl.class

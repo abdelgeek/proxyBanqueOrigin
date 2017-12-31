@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/proxyBanqueV2Web">
+  <!-- Declaration de la ressource-->
   <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/proxybanquebd" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/proxybanquebd" username="root"/>
-  <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="jdbc/proxybanquebd" localDataSource="true" roleNameCol="libelle" userCredCol="motdePasse" userNameCol="pseudo" userRoleTable="role" userTable="Conseiller"/>
+  <!--Mise en place du realm-->
+  <Realm className="org.apache.catalina.realm.DataSourceRealm" dataSourceName="jdbc/proxybanquebd" localDataSource="true" roleNameCol="rolename" userCredCol="motdepasse" userNameCol="pseudo" userRoleTable="userrole" userTable="conseiller"/>
 </Context>

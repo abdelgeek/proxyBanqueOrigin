@@ -19,6 +19,11 @@ import java.util.logging.Logger;
 public class VirementDaoImpl implements IVirementDao {
  private String saveSql ="insert into virement(dateVirement,montant,idCompteDebiteur,idCompteCrediteur,idConseiller) values(?,?,?,?,?)";
 
+ /**
+  * 
+  * @param virement
+  * @return true if save success
+  */
     @Override
     public boolean save(Virement v) {
         int executeUpdate = -1;

@@ -8,6 +8,7 @@ package com.objis.proxybanquev2.proxybanquev2service.impl;
 import com.objis.proxybanquev2.proxybanquev2dao.impl.ClientDaoImpl;
 import com.objis.proxybanquev2.proxybanquev2dao.inter.IClientDao;
 import com.objis.proxybanquev2.proxybanquev2domaine.Client;
+import com.objis.proxybanquev2.proxybanquev2dto.Result;
 import com.objis.proxybanquev2.proxybanquev2service.inter.IClientService;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -27,16 +28,22 @@ public class ClientServiceImpl implements IClientService{
      * @return LinkedList Client
      */
     @Override
-    public LinkedList<Client> FindClientByConseiller(Long conseillerId) {
-         return dao.FindClientByConseiller(conseillerId);    }
+    public LinkedList<Client> FindClientByConseiller(String pseudo) {
+         return dao.FindClientByConseiller(pseudo);    }
 
     @Override
     public Client findOne(Long idClient) {
        return dao.findOne(idClient);    }
 
     @Override
-    public Boolean update(Client t) {
-        return dao.update(t);
+    public Result update(Client t) {
+        Result result = new Result(false, "Impossible de modifier le client");
+        result.setIsValid(dao.update(t));
+        
+        if (result.isIsValid()){
+            result.setMessage("Client modifié avec success");
+        }
+        return result;
     }
 
   

@@ -6,6 +6,7 @@
 package com.objis.proxybanquev2.proxybanquev2web.controleur;
 
 import com.objis.proxybanquev2.proxybanquev2domaine.Client;
+import com.objis.proxybanquev2.proxybanquev2dto.Result;
 import com.objis.proxybanquev2.proxybanquev2service.impl.ClientServiceImpl;
 import com.objis.proxybanquev2.proxybanquev2service.inter.IClientService;
 import com.objis.proxybanquev2.proxybanquev2web.utils.CheckType;
@@ -64,8 +65,8 @@ public class ModifierClient extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       if(CheckType.isLong(request.getParameter("idClient"))){
-           Long idClient =Long.parseLong(request.getParameter("idClient"));
+       if(CheckType.isLong(request.getParameter("id"))){
+           Long idClient =Long.parseLong(request.getParameter("id"));
            Client client = new  Client();
            client = service.findOne(idClient);
            System.out.println(client.getIdClient());
@@ -86,6 +87,7 @@ public class ModifierClient extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Result r = new Result();
        Client c = new Client();
        c.setNom(request.getParameter("nom"));
        c.setPrenom(request.getParameter("prenom"));
@@ -93,10 +95,10 @@ public class ModifierClient extends HttpServlet {
        c.setAdresse(request.getParameter("adresse"));
        c.setIdClient(Long.parseLong(request.getParameter("id")));
        c.setIdConseiller(2L);
-     
-      if( service.update(c)){
-        request.getRequestDispatcher("message.jsp").forward(request, response);
-      };
+       r = service.update(c);
+       request.setAttribute("result", r);
+       
+       request.getRequestDispatcher("message.jsp").forward(request, response);
         
       
     }

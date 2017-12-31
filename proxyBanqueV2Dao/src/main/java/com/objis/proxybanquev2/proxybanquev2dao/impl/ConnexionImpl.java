@@ -25,7 +25,7 @@ public class ConnexionImpl {
     }
 
     /**
-     * Creer la connexion avec la base de donnée
+     * create a connexion with the database 
      * @return un objet Connection
      */
     private static Connection getConnexion() {
@@ -52,6 +52,12 @@ public class ConnexionImpl {
     }
     
     
+    /**
+     * 
+     * @param sql
+     * @return a PreparedStatement
+     * @throws SQLException 
+     */
     public static PreparedStatement CreatePrepareStatement(String sql) throws SQLException{
         PreparedStatement ps = getConnexion().prepareStatement(sql);
         return ps;

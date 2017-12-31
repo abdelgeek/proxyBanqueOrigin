@@ -68,7 +68,7 @@ private IVirementService service = new VirementServiceImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         request.getRequestDispatcher("virement.jsp").forward(request, response);
     }
 
     /**
@@ -87,6 +87,7 @@ private IVirementService service = new VirementServiceImpl();
         String montant = request.getParameter("montant");
         String numDebiteur = request.getParameter("numDebiteur");
         String numCrediteur = request.getParameter("numDebiteur");
+        String pseudo = request.getUserPrincipal().getName();
         
         if((CheckType.isInt(montant)) && (montant != null) && (numDebiteur != null) && (numCrediteur != null)){
              
@@ -94,11 +95,13 @@ private IVirementService service = new VirementServiceImpl();
                  v.setMontant(Integer.parseInt(montant));
                  v.setNumCompteCrediteur(numCrediteur);
                  v.setNumCompteDebiteur(numCrediteur);
+                 v.setPseudoConseiller(pseudo);
                  result = service.save(v);
                  
             }
+        System.out.println(result.isIsValid());
        request.setAttribute("result", result);
-       request.getRequestDispatcher("virement.jsp").forward(request, response);
+       request.getRequestDispatcher("message.jsp").forward(request, response);
     }
 
     /**

@@ -5,6 +5,8 @@
  */
 package com.objis.proxybanquev2.proxybanquev2service.inter;
 
+import com.objis.proxybanquev2.proxybanquev2dto.Result;
+
 
 /**
  *
@@ -14,7 +16,7 @@ public interface IService<T,Pk> {
     
     public T findOne(Pk pk);
     
-    public Boolean update(T t);
+    public Result update(T t);
     
     
     

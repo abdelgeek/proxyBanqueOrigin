@@ -27,10 +27,8 @@ public class CompteDaoImpl implements ICompteDao {
     private String listNum = "select * from compte where numeroCompte like ? limit 5";
 
     /**
-     * Retourner la liste des compte d'un client
-     *
-     * @param clientId
-     * @return LinkedList Compte
+     * @param long
+     * @return a client's accounts
      */
     @Override
     public LinkedList<Compte> FindCompteByClient(Long clientId) {
@@ -62,6 +60,11 @@ public class CompteDaoImpl implements ICompteDao {
         return comptes;
     }
 
+    /**
+     * 
+     * @param numeroCompte
+     * @return an account by it number
+     */
     @Override
     public Compte findOne(String numeroCompte) {
         Compte compte = new Compte();
@@ -91,6 +94,12 @@ public class CompteDaoImpl implements ICompteDao {
         return compte;
     }
 
+    
+    /**
+     * update compte
+     * @param compte
+     * @return a boolean if update success
+     */
     @Override
     public Boolean update(Compte compte) {
         int executeUpdate = 0;
@@ -106,7 +115,12 @@ public class CompteDaoImpl implements ICompteDao {
         }
         return executeUpdate > 0;
     }
-
+    
+    /**
+     * 
+     * @param string
+     * @returnr an account list based on a string of characters
+     */
     @Override
     public LinkedList<String> FindNumCompte(String n) {
         LinkedList<String> numComptes = new LinkedList<>();

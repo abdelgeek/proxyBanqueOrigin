@@ -12,5 +12,5 @@ import com.objis.proxybanquev2.proxybanquev2domaine.Conseiller;
  * @author Abdel veno vedi vici
  */
 public interface IConseillerDao extends IDao<Conseiller,Long>{
-    
+    public Conseiller findByPseudo(String pseudo);
 }

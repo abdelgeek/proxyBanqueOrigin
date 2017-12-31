@@ -5,6 +5,9 @@
 	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	 version="3.1">
    
+     <welcome-file-list>
+    <welcome-file>listeClients</welcome-file>
+</welcome-file-list>
     
     
        <security-constraint>
@@ -18,6 +21,13 @@
             <role-name>conseiller</role-name>
         </auth-constraint>
     </security-constraint>
+    
+    <security-constraint><!--Exclude css and images here -->
+   <web-resource-collection>
+      <web-resource-name>Exclude from Security</web-resource-name>
+      <url-pattern>/assets/*</url-pattern><!-- No security for images -->
+   </web-resource-collection>
+</security-constraint>
 
     <!--QUI?-->
     <security-role>
@@ -46,7 +56,5 @@
     </resource-ref>
     
     
-    <welcome-file-list>
-    <welcome-file>listeClients</welcome-file>
-</welcome-file-list>
+   
 </web-app>

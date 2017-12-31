@@ -8,6 +8,7 @@ package com.objis.proxybanquev2.proxybanquev2service.impl;
 import com.objis.proxybanquev2.proxybanquev2dao.impl.CompteDaoImpl;
 import com.objis.proxybanquev2.proxybanquev2dao.inter.ICompteDao;
 import com.objis.proxybanquev2.proxybanquev2domaine.Compte;
+import com.objis.proxybanquev2.proxybanquev2dto.Result;
 import com.objis.proxybanquev2.proxybanquev2service.inter.ICompteService;
 import java.util.LinkedList;
 
@@ -45,8 +46,15 @@ public class CompteServiceImpl implements ICompteService{
      * @return boolean
      */
     @Override
-    public Boolean update(Compte compte) {
-       return dao.update(compte);
+    public Result update(Compte compte) {
+              
+        Result result = new Result(false, "Impossible de modifier le compte");
+        dao.update(compte);
+        
+        if (result.isIsValid()){
+            result.setMessage("compte modifié avec success");
+        }
+        return result;
     }
 
     

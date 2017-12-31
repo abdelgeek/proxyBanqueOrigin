@@ -15,28 +15,35 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * @version 1.0
  * @author Abdel veno vedi vici
  */
 public class ClientDaoImpl implements IClientDao {
 
-    private String listSql = "Select *  from client where idConseiller=? ";
+   // query to get liste of client
+    private String listSql = "Select client.idClient,client.nom,client.prenom,client.email,"
+            + "client.adresse,client.idconseiller  from client,conseiller"
+            + " where client.idconseiller = conseiller.idConseiller and pseudo=?"; 
+    
+    //query to get a client by it id
     private String findOneSql = "Select *  from client where idClient=? ";
+    
+    //query to update a client
     private String updateSql = "Update client set nom=?,prenom=?,email=?,adresse=? where idClient=? ";
 
     /**
-     * Retourner la liste des clients d'un conseiller
+     * 
      *
      * @param idConseiller
-     * @return Collection Client pour un conseiller donné
+     * @return return list of the client of a advisor
      */
     @Override
-    public LinkedList<Client> FindClientByConseiller(Long idConseiller) {
+    public LinkedList<Client> FindClientByConseiller(String pseudo) {
         LinkedList<Client> clients = new LinkedList<>();
 
         try {
             PreparedStatement ps = ConnexionImpl.CreatePrepareStatement(listSql);
-            ps.setLong(1, idConseiller);
+            ps.setString(1, pseudo);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -46,7 +53,7 @@ public class ClientDaoImpl implements IClientDao {
                 client.setPrenom(rs.getString("prenom"));
                 client.setEmail(rs.getString("email"));
                 client.setAdresse(rs.getString("adresse"));
-                client.setIdConseiller(rs.getLong("idConseiller"));
+                client.setIdConseiller(rs.getLong("idconseiller"));
 
                 clients.add(client);
             }
@@ -57,6 +64,12 @@ public class ClientDaoImpl implements IClientDao {
         return clients;
     }
 
+    
+    /**
+     * 
+     * @param idClient
+     * @return a client by it id
+     */
     @Override
     public Client findOne(Long idClient) {
         Client client = new Client();
@@ -82,6 +95,11 @@ public class ClientDaoImpl implements IClientDao {
         return client;
     }
 
+    /**
+     * update client
+     * @param client
+     * @return true if update client success
+     */
     @Override
     public Boolean update(Client client) {
 

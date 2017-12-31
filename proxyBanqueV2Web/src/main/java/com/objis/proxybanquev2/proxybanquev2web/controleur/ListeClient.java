@@ -12,6 +12,7 @@ import com.objis.proxybanquev2.proxybanquev2service.inter.IService;
 import com.objis.proxybanquev2.proxybanquev2web.utils.CheckType;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.Principal;
 import java.util.LinkedList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,16 +67,16 @@ public class ListeClient extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String pseudo;
+       
+            pseudo = request.getUserPrincipal().getName();
+         
 
-        if (CheckType.isLong(request.getParameter("idConseiller"))) {
-            Long idConseiller = Long.parseLong(request.getParameter("idConseiller")); // convert parameter
             LinkedList<Client> clients = new LinkedList<>();
-            clients = service.FindClientByConseiller(idConseiller); // get client list
+            clients = service.FindClientByConseiller(pseudo); // get client list
 
             request.setAttribute("clients", clients); //send result to ui
             request.getRequestDispatcher("listeClients.jsp").forward(request, response);
-
-        }
 
     }
 

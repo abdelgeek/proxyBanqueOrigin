@@ -1,10 +1,21 @@
 
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="header.jsp" %>
 <!-- ******************************************************************-->
 <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ debut de le content @@@@@@@@@@@@@@@@@-->
 <!-- ******************************************************************-->
+
+<c:choose>
+    <c:when test="${result.isValid == true}">
+        <c:set var="state" value="alert-success" scope="session"></c:set>
+    </c:when>
+    <c:when test="${result.isValid == false}">
+        <c:set var="state" value="alert-danger" scope="session"></c:set>
+    </c:when>
+    <c:otherwise></c:otherwise>
+</c:choose>
 
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -14,9 +25,10 @@
                 <a href="index.html">Accueil</a>
             </li>
             <li class="breadcrumb-item active">Faire un virement</li>
+           
         </ol>
         
-        <div class ="Alert alert-success">${result.message}</div>
+        <div class ="Alert ${state}">${result.message}</div>
         <div class="row">
             <div class="col-12">
 

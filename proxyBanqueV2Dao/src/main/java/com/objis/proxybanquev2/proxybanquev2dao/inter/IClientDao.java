@@ -21,7 +21,7 @@ public interface IClientDao extends IDao<Client,Long> {
      * @param conseillerId
      * @return LinkedList Client
      */
-    public LinkedList<Client> FindClientByConseiller(Long conseillerId );
+    public LinkedList<Client> FindClientByConseiller(String pseudo );
     
     
     

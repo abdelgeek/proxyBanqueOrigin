@@ -15,15 +15,17 @@ public class VirementDto {
     private String NumCompteDebiteur;
     private String NumCompteCrediteur;
     private Integer montant ;
-    private Long idConseiller;
+    private String  pseudoConseiller;
 
-    public Long getIdConseiller() {
-        return idConseiller;
+    public String getPseudoConseiller() {
+        return pseudoConseiller;
     }
 
-    public void setIdConseiller(Long idConseiller) {
-        this.idConseiller = idConseiller;
+    public void setPseudoConseiller(String pseudoConseiller) {
+        this.pseudoConseiller = pseudoConseiller;
     }
+
+    
 
     public String getNumCompteDebiteur() {
         return NumCompteDebiteur;
@@ -41,8 +43,6 @@ public class VirementDto {
         this.NumCompteCrediteur = NumCompteCrediteur;
     }
     
-   
-
    
 
     public Integer getMontant() {

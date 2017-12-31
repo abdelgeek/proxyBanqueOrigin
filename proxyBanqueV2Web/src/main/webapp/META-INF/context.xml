@@ -12,6 +12,6 @@
            localDataSource="true"
            dataSourceName="jdbc/proxybanquebd"
            userTable="conseiller" userNameCol="pseudo" userCredCol="motdepasse"
-           userRoleTable="role" roleNameCol="libelle"/>
+           userRoleTable="userrole" roleNameCol="rolename"/>
 
 </Context>
